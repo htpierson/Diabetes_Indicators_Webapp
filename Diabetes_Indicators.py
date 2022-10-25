@@ -46,7 +46,7 @@ with tab2:
     if display2:
         st.dataframe(data_corr)
     
-    selection = alt.selection_multi(fields=['Indicator'])
+    selection = alt.selection_single(on = 'mouseover', nearest = True, fields=['Indicator'])
     color = alt.condition(selection,
                       alt.Color('Indicator:N', scale=alt.Scale(scheme='sinebow'), legend=None),
                       alt.value('lightgray'))
